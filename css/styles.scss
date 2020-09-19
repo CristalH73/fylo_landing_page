@@ -1,0 +1,509 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ----- COLORS ----- */
+$dark-blue: hsl(243, 87%, 12%);
+$desat-blue: hsl(238, 22%, 44%);
+$bright-blue: hsl(224, 93%, 58%);
+$cyan: hsl(170, 45%, 43%);
+$gray-blue: hsl(240, 75%, 98%);
+$gray: hsl(0, 0%, 75%);
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: $dark-blue;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(1em, 1fr) minmax(0px, 80%) minmax(1em, 1fr);
+}
+
+.grid > * {
+  grid-column: 2;
+}
+
+.hero,
+.productivity,
+.access,
+.footer {
+  grid-row-gap: 2em;
+}
+
+p + p {
+  margin-top: 1em;
+}
+
+/* ----- TYPOGRAPHY ----- */
+h1,
+h2,
+.nav-list-link,
+.btn {
+  font-family: "Raleway", sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+.hero-body {
+  font-size: 1.05rem;
+  margin: 1em 0;
+}
+
+.productivity-title {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 1em;
+}
+
+.productivity-card {
+  font-size: 0.85rem;
+}
+
+.person-name {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.person-job {
+  font-size: 0.6rem;
+}
+
+.access {
+  font-size: 1.125rem;
+}
+
+.access-title {
+  font-size: 1.45rem;
+}
+
+.footer {
+  font-size: 1.2rem;
+}
+
+.attribution {
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+/* INPUT & BUTTONS */
+
+input,
+.btn {
+  display: block;
+  padding: 0.8em 0;
+  border-radius: 5px;
+  width: 70%;
+  justify-self: center;
+}
+
+input {
+  border: 1px solid $dark-blue;
+  padding-left: 1.5em;
+  margin-bottom: 1.3em;
+}
+
+input::placeholder {
+  color: $gray;
+}
+
+.btn {
+  background: $bright-blue;
+  font-weight: 700;
+  color: white;
+  border: 0;
+}
+
+.btn:hover,
+.btn:focus {
+  background: $cyan;
+}
+
+/* ----- LAYOUT ----- */
+
+/* HEADER */
+.header {
+  display: grid;
+  grid-template-columns: minmax(1em, 1fr) repeat(2, minmax(0px, 700px)) minmax(
+      1em,
+      1fr
+    );
+  margin-bottom: 8em;
+  padding-top: 1.5em;
+  grid-column-gap: 5em;
+}
+
+.logo {
+  grid-column: 2;
+  max-width: 85%;
+}
+
+.nav {
+  align-self: center;
+  justify-self: end;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+
+.nav-list-item {
+  margin-left: 1em;
+}
+
+.nav-list-link {
+  display: inline-block;
+  text-decoration: none;
+  color: $dark-blue;
+  width: max-content;
+}
+
+.nav-list-link:hover,
+.nav-list-link:focus {
+  color: $bright-blue;
+  border-bottom: 1px solid $bright-blue;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  margin-bottom: 8em;
+  padding: 0 1em;
+}
+
+.hero-img {
+  display: grid;
+  order: -1;
+}
+
+.hero-form {
+  display: grid;
+}
+
+/* PRODUCTIVITY */
+.productivity {
+  background: $gray-blue;
+  padding-bottom: 6em;
+}
+
+.productivity-curve-img {
+  display: block;
+  background: white;
+}
+
+.productivity-curve-img-desktop {
+  display: none;
+}
+
+.productivity-img {
+  order: -1;
+}
+
+.prod-link-container {
+  display: block;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.productivity-link {
+  color: $cyan;
+  text-decoration: none;
+  border-bottom: 1px solid $cyan;
+}
+
+.productivity-link:hover,
+.productivity-link:focus {
+  color: $desat-blue;
+}
+
+.productivity-card {
+  display: flex;
+  flex-direction: column;
+  margin: 3em 3em 2em;
+  padding: 2em;
+  background: white;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+}
+
+/* PRODUCTIVITY-CARD */
+.card-open-quote {
+  align-self: flex-start;
+  margin-bottom: 1em;
+}
+
+.card-person {
+  display: flex;
+  margin-top: 1em;
+}
+
+.card-avatar {
+  border-radius: 50%;
+  width: 13%;
+}
+
+.card-person-credentials {
+  margin: auto 1em;
+  line-height: 0.8;
+}
+
+/* ACCESS */
+.access {
+  background: $desat-blue;
+  padding: 4em 1em;
+  text-align: center;
+  color: white;
+}
+
+/* FOOTER */
+.footer {
+  background: $dark-blue;
+  color: white;
+  padding: 4em 0 1em 1.5em;
+}
+
+.footer-logo {
+  width: 50%;
+  filter: brightness(0%) invert(1);
+}
+
+.footer-contact {
+  margin-top: 1.2em;
+}
+
+.footer-contact > p {
+  display: inline-block;
+  margin-bottom: 0.8em;
+}
+
+.footer-icon {
+  margin-right: 0.8em;
+}
+
+.footer-nav {
+  list-style: none;
+}
+
+.footer-nav-item {
+  padding: 0.5em 0;
+}
+
+.footer-nav-link:hover,
+.footer-nav-link:focus {
+  color: lighten($bright-blue, 15%);
+  cursor: pointer;
+}
+
+.footer-socials {
+  justify-self: center;
+}
+
+.fab {
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 8px;
+  margin: 0.3em;
+}
+
+.fab:hover,
+.fab:focus {
+  color: lighten($bright-blue, 15%);
+  border: 1px solid lighten($bright-blue, 15%);
+  cursor: pointer;
+}
+
+.fa-facebook-f {
+  padding: 8px 12px;
+}
+
+.attribution-link {
+  color: lighten($desat-blue, 20%);
+  letter-spacing: 1px;
+}
+
+/* ----- MEDIA QUERY ----- */
+/* LARGER THAN 375PX */
+
+@media (min-width: 375px) {
+  .productivity-curve-img {
+    display: none;
+  }
+
+  .productivity-curve-img-desktop {
+    display: block;
+    background: white;
+    margin: 0 auto;
+  }
+}
+
+/* LARGER THAN 1000PX */
+
+@media (min-width: 1000px) {
+  .grid,
+  .header {
+    grid-template-columns:
+      minmax(1em, 1fr) minmax(260px, 350px) repeat(2, minmax(10%, 100px)) minmax(
+        15%,
+        100px
+      )
+      minmax(1em, 1fr);
+    grid-column-gap: 5em;
+  }
+
+  /* ----- TYPOGRAPHY ----- */
+  body,
+  .hero-body,
+  .access {
+    font-size: 1.15rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .productivity-title {
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .productivity-card {
+    font-size: 1rem;
+  }
+
+  .person-name {
+    font-size: 0.95rem;
+  }
+
+  .person-job {
+    font-size: 0.75rem;
+  }
+
+  .access-title {
+    font-size: 2rem;
+  }
+
+  .attribution {
+    font-size: 0.8rem;
+  }
+
+  /* ----- LAYOUT ----- */
+
+  .nav {
+    grid-column: -4 / span 2;
+  }
+
+  .hero-img,
+  .productivity-img,
+  .access-form {
+    grid-column: 4 / span 2;
+    grid-row: span 2;
+    order: 1;
+  }
+
+  .hero {
+    text-align: left;
+  }
+
+  .hero-info,
+  .productivity-info,
+  .access-title,
+  .access-body {
+    grid-column: 2 / span 2;
+  }
+
+  .hero-form,
+  .access-form {
+    display: block;
+  }
+
+  .hero-form input,
+  .hero-form button {
+    display: inline-block;
+  }
+
+  .hero-form input {
+    width: 70%;
+  }
+
+  .hero-form button {
+    width: 25%;
+  }
+
+  .productivity-img {
+    align-self: center;
+  }
+
+  .prod-link-container {
+    text-align: left;
+  }
+
+  .productivity-card {
+    margin-left: 0;
+    margin-right: 9em;
+  }
+
+  .access {
+    text-align: left;
+  }
+
+  .access-form input {
+    width: 100%;
+  }
+
+  .access-form button {
+    width: 50%;
+  }
+
+  .footer-logo {
+    width: 40%;
+    grid-column: 2 / span 2;
+  }
+
+  .footer-contact {
+    grid-row: 2;
+  }
+
+  .footer-nav--one {
+    grid-column: 3 / span 1;
+    grid-row: 2;
+  }
+
+  .footer-nav--two {
+    grid-column: 4 / span 1;
+    grid-row: 2;
+  }
+
+  .footer-socials {
+    grid-column: 5 / span 1;
+    grid-row: 2;
+    justify-self: flex-start;
+  }
+
+  .attribution {
+    grid-column: 1 / -1;
+  }
+}
+
+/* LARGER THAN 1400PX */
+
+@media (min-width: 1440px) {
+  .productivity-curve-img-desktop {
+    transform: translateY(35%);
+  }
+
+  .productivity {
+    padding-top: 3em;
+  }
+}
